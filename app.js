@@ -15,6 +15,10 @@ function compare(a, b) {
   
     return 0;
   }
+
+  app.get("/",function(rq,rs){
+            rs.sendFile(__dirname +"/index.html");
+  })
 app.get("/Confirmed",function(rq,rs){
     let confirmedcountries=[];
     url="https://covid19.mathdro.id/api/countries";
