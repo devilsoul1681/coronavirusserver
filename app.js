@@ -19,6 +19,8 @@ function compare(a, b) {
   app.get("/",function(rq,rs){
             rs.sendFile(__dirname +"/index.html");
   })
+
+  const port=process.env.PORT || 8000;
 app.get("/Confirmed",function(rq,rs){
     let confirmedcountries=[];
     url="https://covid19.mathdro.id/api/countries";
@@ -92,6 +94,6 @@ app.get("/Deaths",function(rq,rs){
 
 
 
-app.listen(8000,function(){
+app.listen(port,function(){
     console.log("Server is running on port 8000");
 })
